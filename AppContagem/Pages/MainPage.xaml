@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppContagem.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="50"
+            VerticalOptions="CenterAndExpand">
+
+            <Label
+                Text="INOVISÃO"
+                FontSize="48"
+                TextColor="White"
+                HorizontalOptions="CenterAndExpand"
+                ></Label>
+
+            <Image
+                BackgroundColor="Transparent"
+                Margin="0,-50, 0, 0"
+                Source="projeto_pacu.png"
+                WidthRequest="150"
+                HorizontalOptions="CenterAndExpand"/>
+
+            <Image
+                BackgroundColor="Transparent"
+                Margin="0,-80, 0, 0"
+                Source="logo.png"
+                WidthRequest="500"
+                HorizontalOptions="CenterAndExpand"/>
+
+            <Button
+                BackgroundColor="White"
+                x:Name="selecionarImagens"
+                Text="Selecionar Imagens"
+                TextColor="Black"
+                FontSize="24"
+                WidthRequest="250"
+                Clicked="enviarFotosClicked"
+                HorizontalOptions="Center"
+                VerticalOptions="End"/>
+            
+            <Button
+                BackgroundColor="White"
+                x:Name="historico"
+                Text="Histórico"
+                WidthRequest="250"
+                TextColor="Black"
+                FontSize="24"
+                Clicked="historico_Clicked"
+                HorizontalOptions="Center"
+                VerticalOptions="End"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

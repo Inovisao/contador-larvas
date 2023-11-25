@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppContagem.Pages.Resultados"
+             Title="Resultados">
+    <VerticalStackLayout>
+
+        <CarouselView ItemsSource="{Binding Images}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="10"
+                           Margin="10"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand">
+                        <StackLayout>
+                            <Label Text="{Binding _id}"
+                                   FontSize="Medium"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"></Label>
+                            
+                            <Image Source="{Binding path}"
+                                   Aspect="AspectFill"
+                                   HeightRequest="340"
+                                   WidthRequest="340"></Image>
+                            
+                            <Label Text="{Binding total_count, StringFormat='Total: {0} larvas.'}"
+                                   FontSize="Medium"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"></Label>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppContagem.Pages.Historico"
+             Title="Historico">
+    <VerticalStackLayout>
+        <ScrollView>
+            <VerticalStackLayout
+        Spacing="25"
+        Padding="30,0"
+        VerticalOptions="Center">
+
+                <ListView x:Name="listViewImages"
+                      BackgroundColor="Transparent"
+                      SeparatorVisibility="None"
+                      HeightRequest="300"
+                      ItemTapped="VerFotos_Tapped"
+                      ItemsSource="{Binding ImageGroup}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding data, StringFormat='{0:MMMM dd, yyyy, hh:mm:ss}'}" TextColor="White"></TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
