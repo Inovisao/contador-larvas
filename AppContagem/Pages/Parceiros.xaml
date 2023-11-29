@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fishlytics.Pages.Parceiros"
+             Title="Parceiros">
+    <VerticalStackLayout>
+
+        <Image
+            BackgroundColor="Transparent"
+            Source="logo_app_bg.png"
+            WidthRequest="150"
+            HorizontalOptions="CenterAndExpand"/>
+
+        <Image
+            BackgroundColor="Transparent"
+            Source="projeto_pacu.png"
+            WidthRequest="200"
+            HorizontalOptions="CenterAndExpand"/>
+
+        <Image
+            BackgroundColor="Transparent"
+            Source="inovisao.png"
+            WidthRequest="200"
+            HorizontalOptions="CenterAndExpand"/>
+    </VerticalStackLayout>
+</ContentPage>

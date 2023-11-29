@@ -10,12 +10,13 @@
                 <DataTemplate>
                     <Frame CornerRadius="10"
                            Margin="10"
+                           BackgroundColor="Black"
                            HorizontalOptions="Center"
                            VerticalOptions="CenterAndExpand">
                         <StackLayout>
                             <Label Text="{Binding _id}"
                                    FontSize="Medium"
-                                   TextColor="Black"
+                                   TextColor="White"
                                    HorizontalOptions="Center"></Label>
                             
                             <Image Source="{Binding path}"
@@ -24,8 +25,8 @@
                                    WidthRequest="340"></Image>
                             
                             <Label Text="{Binding total_count, StringFormat='Total: {0} larvas.'}"
-                                   FontSize="Medium"
-                                   TextColor="Black"
+                                   FontSize="Large"
+                                   TextColor="White"
                                    HorizontalOptions="Center"></Label>
                         </StackLayout>
                     </Frame>

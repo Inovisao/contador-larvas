@@ -24,5 +24,10 @@ public partial class MainPage : ContentPage
     {
         await Navigation.PushAsync(new Configuracoes());
     }
+
+    private async void parceiros_Clicked(object sensor, EventArgs e)
+    {
+        await Navigation.PushAsync(new Parceiros());
+    }
 }
 

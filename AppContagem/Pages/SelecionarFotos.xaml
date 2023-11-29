@@ -19,9 +19,8 @@
                     x:Name="tiraFoto"
                     Text="Tirar Foto"
                     WidthRequest="300"
-                    FontSize="24"
+                    FontSize="Medium"
                     TextColor="Black"
-                    SemanticProperties.Hint="Opção para abrir a camera e capturar uma foto."
                     Clicked="capturaFotoClicked"
                     HorizontalOptions="Center" />
 
@@ -29,10 +28,18 @@
                     x:Name="selecioneFoto"
                     Text="Selecionar Foto(s)"
                     WidthRequest="300"
-                    FontSize="24"
+                    FontSize="Medium"
                     TextColor="Black"
-                    SemanticProperties.Hint="Opção para selecionar fotos existentes na galeria."
                     Clicked="selecioneFotoClicked"
+                    HorizontalOptions="Center" />
+
+                <Button
+                    x:Name="realizaContagem"
+                    Text="Enviar"
+                    WidthRequest="300"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    Command="{Binding enviaParaApiCommand}"
                     HorizontalOptions="Center" />
 
                 <ListView x:Name="listViewImages"
@@ -47,16 +54,6 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
-                <Button
-                    x:Name="realizaContagem"
-                    Text="Enviar"
-                    WidthRequest="300"
-                    FontSize="24"
-                    TextColor="Black"
-                    Command="{Binding enviaParaApiCommand}"
-                    SemanticProperties.Hint="Enviar para obter a quantidade de larvas por imagem."
-                    HorizontalOptions="Center" />
 
             </VerticalStackLayout>
         </ScrollView>

@@ -7,7 +7,7 @@
         <Label 
             Text="IP do Servidor"
             WidthRequest="300"
-            FontSize="24"
+            FontSize="Medium"
             VerticalOptions="FillAndExpand" 
             HorizontalOptions="FillAndExpand" />
 
@@ -15,7 +15,7 @@
             x:Name="ip_server_entry"
             Placeholder="IP do Servidor"
             WidthRequest="300"
-            FontSize="16"
+            FontSize="Medium"
             BackgroundColor="White"
             VerticalOptions="FillAndExpand"
             HorizontalOptions="FillAndExpand"></Entry>
@@ -24,7 +24,7 @@
             Text="Confirmar"
             WidthRequest="300"
             VerticalOptions="FillAndExpand"
-            FontSize="24"
+            FontSize="Medium"
             TextColor="Black"
             Clicked="confirm_Clicked"
             HorizontalOptions="FillAndExpand" />

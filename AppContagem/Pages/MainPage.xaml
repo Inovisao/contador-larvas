@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppContagem.MainPage">
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Parceiros" Clicked="parceiros_Clicked" />
         <ToolbarItem Text="Configuração" Clicked="config_Clicked" />
     </ContentPage.ToolbarItems>
 
@@ -10,20 +11,6 @@
         <VerticalStackLayout
             Spacing="50"
             VerticalOptions="CenterAndExpand">
-
-            <Label
-                Text="INOVISÃO"
-                FontSize="48"
-                TextColor="White"
-                HorizontalOptions="CenterAndExpand"
-                ></Label>
-
-            <Image
-                BackgroundColor="Transparent"
-                Margin="0,-50, 0, 0"
-                Source="projeto_pacu.png"
-                WidthRequest="150"
-                HorizontalOptions="CenterAndExpand"/>
 
             <Image
                 BackgroundColor="Transparent"
@@ -37,7 +24,7 @@
                 x:Name="selecionarImagens"
                 Text="Selecionar Imagens"
                 TextColor="Black"
-                FontSize="24"
+                FontSize="Medium"
                 WidthRequest="250"
                 Clicked="enviarFotosClicked"
                 HorizontalOptions="Center"
@@ -49,7 +36,7 @@
                 Text="Histórico"
                 WidthRequest="250"
                 TextColor="Black"
-                FontSize="24"
+                FontSize="Medium"
                 Clicked="historico_Clicked"
                 HorizontalOptions="Center"
                 VerticalOptions="End"/>
