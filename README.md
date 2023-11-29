@@ -67,3 +67,13 @@ Software de detecção e contagem automática de larvas peixes usando machine le
 - As redes foram treinadas com cortes de 640x640 pixels de imagens de larvas de peixes. Os arquivos para o treinos são individuais para cada rede e estão em ```src/models/<nome_da_rede>/train_<nome_da_rede>```
 2. Ajuste dos parâmetros de inferência das redes:
 - Depois de treinar as redes, cada modelo teve os seus 3 parâmetros de inferência ```(resize_scale, grid_scale, confiance)``` permutados dentro de uma faixa para obter a melhor combinação desses 3 parâmetros com base nas métricas MAE, MAPE e RMSE. Esse passo é feito no arquivo ```utils/metrics/metrics_permutation.py```. Nele tem a classe ```ArgsPermutator```, na qual o método ```.add()``` adiciona uma nova rede com uma faixa de parâmetros para ser permutados e testados um a um dentro do dataset escolhido. No fim é gerado um arquivo com os melhores parâmetros na pasta ```resuls/params_comparison/```, e deles se define o melhor parâmetro usado para cada rede.
+
+
+### Instruções para utilização do aplicativo:
+Após instalado, o aplicativo irá apresentar as seguintes opções:
+1. Selecionar Fotos: essa opção levará para uma segunda tela onde o usuário poderá capturar novas fotos ou selecionar as já existentes em seu dispositivo. Tendo as imagens selecionadas, elas devem ser enviadas para o servidor através do botão "Enviar".
+- O botão enviar fará a requisição, enviando a imagens para que o servidor faça a contagem. Após a resposta ser recebida, o usuário será direcionado à outra tela que exibirá os resultados, além de guardá-los em um banco de dados local.
+- A tela de resultados exibirá as imagens anotadas juntamente com a quantidade de larvas presentes em cada uma delas. É possível visualizar todas as imagens enviadas passando para o lado.
+2. Histórico: nesse botão leva para outra tela, aonde é possível visualizar o histórico de requisições feitas. Ao selecionar uma das opções, o usuário é direcionado para a tela de resultados.
+3. Configurações: essa tela dá ao usuário a possibilidade de alterar a URL do servidor em que a API estará hospedada e possui um campo e um botão. No campo, deve ser colocado a URL desejada e confirmar esse link através do "Confirmar".
+4. Parceiros: essa tela exibe os parceiros do projeto.
