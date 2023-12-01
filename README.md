@@ -26,7 +26,7 @@ Software de detecção e contagem automática de larvas peixes usando machine le
         [
             {
                 "_id": "id_da_imagem",
-                "image": "ZGphc2lp...",
+                "image": "<string_da_imagem_em_base_64>",
                 "grid_scale": 0.3,
                 "confiance": 0.5,  
                 "return_image": true,
@@ -48,7 +48,7 @@ Software de detecção e contagem automática de larvas peixes usando machine le
                 "grid_results": [              
                     {"grid_xyxy": [1,2,3,4], "grid_index": [1,2]}, {"...": "..."}
                 ],
-                "annotated_image": "XGphckG..."
+                "annotated_image": "<string_da_imagem_anotada_em_base_64>"
             },
             {"res_2": "..."}, 
             {"res_3": "..."}, 
