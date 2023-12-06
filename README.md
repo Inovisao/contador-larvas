@@ -2,6 +2,22 @@
 
 Software de detecção e contagem automática de larvas peixes usando machine learning.
 
+### Dependências da API:
+- conda create --name nome_do_seu_ambiente python=3.12
+- conda activate nome_do_seu_ambiente
+- instalar o ```Pytorch``` de acordo com a sua versão do CUDA pelo site https://pytorch.org/get-started/locally/
+- pip install -r requirements.txt
+
+### ngrock
+- a API foi levantada usando o ngrock
+- seguir a documentação oficial do https://ngrok.com
+- a porta usada pelo ngrock é definida no final do arquivo ```src\api\app.py```
+```python
+if __name__ == '__main__':
+    application.run(host='0.0.0.0', port=```<PORTA_DO_NGROCK>```, debug=False)
+```
+
+
 ### API:
 
 ##### Execução da API
@@ -68,11 +84,6 @@ Software de detecção e contagem automática de larvas peixes usando machine le
 2. Ajuste dos parâmetros de inferência das redes:
 - Depois de treinar as redes, cada modelo teve os seus 3 parâmetros de inferência ```(resize_scale, grid_scale, confiance)``` permutados dentro de uma faixa para obter a melhor combinação desses 3 parâmetros com base nas métricas MAE, MAPE e RMSE. Esse passo é feito no arquivo ```utils/metrics/metrics_permutation.py```. Nele tem a classe ```ArgsPermutator```, na qual o método ```.add()``` adiciona uma nova rede com uma faixa de parâmetros para ser permutados e testados um a um dentro do dataset escolhido. No fim é gerado um arquivo com os melhores parâmetros na pasta ```resuls/params_comparison/```, e deles se define o melhor parâmetro usado para cada rede.
 
-### Dependências da API:
-- conda create --name nome_do_seu_ambiente python=3.12
-- conda activate nome_do_seu_ambiente
-- instalar o ```Pytorch``` de acordo com a sua versão do CUDA pelo site https://pytorch.org/get-started/locally/
-- pip install -r requirements.txt
 
 ### Instruções para utilização do aplicativo:
 Após instalado, o aplicativo irá apresentar as seguintes opções:
