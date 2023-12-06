@@ -11,10 +11,10 @@ Software de detecção e contagem automática de larvas peixes usando machine le
 ### ngrock
 - a API foi levantada usando o ngrock
 - seguir a documentação oficial do https://ngrok.com
-- a porta usada pelo ngrock é definida no final do arquivo ```src\api\app.py```
+- a porta usada pelo ngrock é definida no final do arquivo ```src\api\app.py``` na linha:
 ```python
 if __name__ == '__main__':
-    application.run(host='0.0.0.0', port=```<PORTA_DO_NGROCK>```, debug=False)
+    application.run(host='0.0.0.0', port=<PORTA_DO_NGROCK>, debug=False)
 ```
 
 
