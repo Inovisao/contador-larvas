@@ -3,19 +3,25 @@
 Software de detecção e contagem automática de larvas peixes usando machine learning.
 
 ### Dependências da API:
-- conda create --name nome_do_seu_ambiente python=3.12
-- conda activate nome_do_seu_ambiente
-- instalar o ```Pytorch``` de acordo com a sua versão do CUDA pelo site https://pytorch.org/get-started/locally/
-- pip install -r requirements.txt
+- conda create --name contador-larvas python=3.11
+- conda activate contador-larvas
+- conda install pip
+- conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+- pip install numpy urllib3 flask requests opencv-python Pillow scipy shapely
+- pip install transformers
+- pip install ultralytics
 
 ### ngrock
-- a API foi levantada usando o ngrock
-- seguir a documentação oficial do https://ngrok.com
+- A API precisa ser levantada usando o ngrock
+- seguir a [documentação oficial do ngrok](https://ngrok.com/docs/getting-started/)
 - a porta usada pelo ngrock é definida no final do arquivo ```src\api\app.py``` na linha:
 ```python
 if __name__ == '__main__':
     application.run(host='0.0.0.0', port=<PORTA_DO_NGROCK>, debug=False)
 ```
+
+Para permitir comunicação entre API e app, utilize o seguinte comando:
+```ngrok http 3000```
 
 
 ### API:
@@ -92,7 +98,7 @@ Após instalado, o aplicativo irá apresentar as seguintes opções:
 - O botão enviar fará a requisição, enviando a imagens para que o servidor faça a contagem. Após a resposta ser recebida, o usuário será direcionado à outra tela que exibirá os resultados, além de guardá-los em um banco de dados local.
 - A tela de resultados exibirá as imagens anotadas juntamente com a quantidade de larvas presentes em cada uma delas. É possível visualizar todas as imagens enviadas passando para o lado.
 2. Histórico: nesse botão leva para outra tela, aonde é possível visualizar o histórico de requisições feitas. Ao selecionar uma das opções, o usuário é direcionado para a tela de resultados.
-3. Configurações: essa tela dá ao usuário a possibilidade de alterar a URL do servidor em que a API estará hospedada e possui um campo e um botão. No campo, deve ser colocado a URL desejada e confirmar esse link através do "Confirmar".
+3. Configurações: essa tela dá ao usuário a possibilidade de alterar a URL do servidor em que a API estará hospedada e possui um campo e um botão. No campo, deve ser colocado a URL desejada do ngrok e confirmar esse link através do "Confirmar".
 4. Parceiros: essa tela exibe os parceiros do projeto.
 
 ### Para geração do APK (feito no windows 10)
