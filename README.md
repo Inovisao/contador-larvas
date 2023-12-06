@@ -70,6 +70,7 @@ Software de detecção e contagem automática de larvas peixes usando machine le
 
 ### Dependências da API:
 - conda create --name nome_do_seu_ambiente python=3.12
+- conda activate nome_do_seu_ambiente
 - instalar o ```Pytorch``` de acordo com a sua versão do CUDA pelo site https://pytorch.org/get-started/locally/
 - pip install -r requirements.txt
 
