@@ -69,15 +69,8 @@ Software de detecção e contagem automática de larvas peixes usando machine le
 - Depois de treinar as redes, cada modelo teve os seus 3 parâmetros de inferência ```(resize_scale, grid_scale, confiance)``` permutados dentro de uma faixa para obter a melhor combinação desses 3 parâmetros com base nas métricas MAE, MAPE e RMSE. Esse passo é feito no arquivo ```utils/metrics/metrics_permutation.py```. Nele tem a classe ```ArgsPermutator```, na qual o método ```.add()``` adiciona uma nova rede com uma faixa de parâmetros para ser permutados e testados um a um dentro do dataset escolhido. No fim é gerado um arquivo com os melhores parâmetros na pasta ```resuls/params_comparison/```, e deles se define o melhor parâmetro usado para cada rede.
 
 ### Dependências da API:
-- conda create --name nome_do_seu_ambiente
-- sudo apt install python3-pip (Atualizando o pip)
-- pip install supervision==0.3.0
-- pip install transformers (Versão 4.34.1)
-- pip install pytorch-lightning (Versão 2.1.0)
-- pip install timm
-- pip install cython
-- pip install pycocotools
-- pip install scipy
+- conda create --name nome_do_seu_ambiente python=3.12
+- pip install -r requirements.txt
 
 ### Instruções para utilização do aplicativo:
 Após instalado, o aplicativo irá apresentar as seguintes opções:
