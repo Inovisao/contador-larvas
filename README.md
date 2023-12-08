@@ -28,7 +28,11 @@ Para permitir comunicação entre API e app, utilize o seguinte comando:
 
 ##### Execução da API
 1. Em primeiro lugar, é necessário colocar as redes treinadas nos caminhos ```data/models/<nome_da_rede>/<arquivo_da_rede>```, seguindo os caminhos previstos na classe ```ModelsPaths``` do arquivo ```src/predictor/counter.py```, sendo que as redes de mesma arquitetura (variando apenas o tamanho dela) são colocadas na mesma pasta. Obs: as redes YOLO e RT-DETR são apenas arquivos ```.pt```, enquanto a DETR e DEFORMABLE-DETR são pastas.
+    - Voce pode encontrar os modelos originalmente treinados para este projeto na Ada, no caminho:
+    ```GHD/modelosDoInovisao/larvasDePeixes/data-contador-larvas.rar```
 2. Após isso, basta apenas executar o arquivo ```src\api\app.py``` que a API estará pronta para o uso.
+    - Caso queira utilizar as imagens do dataset de larvas usados originalmente neste projeto, por favor siga o seguinte caminho na Ada:
+    ```GHD/bancosDeImagens/Peixes/Larvas/ContagemLarvas/train```
 
 ##### Uso da API:
 1. Rotas da API:
