@@ -112,3 +112,37 @@ Após instalado, o aplicativo irá apresentar as seguintes opções:
 2. Geração do APK (preencher utilzando o nome do arquivo, o alias utilizado e a senha definida no momento de criação do keystore)
 - dotnet publish -f net7.0-android -c Release -p:AndroidKeyStore=true -p:AndroidSigningKeyStore=fishlytics.keystore -p:AndroidSigningKeyAlias=fishlytics -p:AndroidSigningKeyPass=sua_senha -p:AndroidSigningStorePass=sua_senha
 3. Resta apenas aguardar o término do processo. Os arquivos criados serão armazenados no caminho bin/Release/net7.0-android, é lá onde podemos encontrar o APK e outros arquivos caso haja o interesse de enviar para a playstore (loja de apps do google).
+
+### Instrucoes para rodar o app (testado no Ubunto 22.04.3 LTS com a versao 7.0.14 do dotnet)
+1. Necessario a utilizacao do VSCODE (baixado pela loja de apps do ubunto)
+2. Execute o seguinte comando para baixar os scripts de instalacao: wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
+3. Para instalar os scripts, primeiro rode os comandos: 
+- chmod +x dotnet-install.sh
+- ./dotnet-install.sh --channel 7.0
+4. Agora, sera necessario direcionar a variavel de ambiente do dotnet para o local de instalacao, para cada computador sera diferente. Esse local sera exibido apos a execucao do ultimo comando.
+- Acesse o arquivo de configuracao com o comando (tambem sera necessario identificar o local deste arquivo, por padrao, ele pode ser encontrado na base do linux): open .bashrc
+- O ultimo comando abrira um .txt para a edicao das variaveis de ambiente, nele, insira os seguintes parametros: 
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+- Apos isso, o arquivo deve ser salvo e a instalacao pode ser verificada no terminal com o comando "dotnet --info" (antes disso, digite no terminal "source .bashrc")
+5. Para a instalacao do dotnet maui, execute o comando: dotnet workload install maui-android
+6. Instalacao do Open JDK
+- Execute os seguintes comandos para baixar os pacotes:
+ubuntu_release=`lsb_release -rs`
+wget https://packages.microsoft.com/config/ubuntu/${ubuntu_release}/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+- E esses para a instalacao:
+sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install msopenjdk-11
+7. Faca a instalacao do android studio (encontrado na loja de apps do ubunto)
+8. Instalar as extensoes ".NET MAUI", "C#" e ".NET Install Tool" no vscode
+9. Configurar o Android SDK no vscode
+- Um aviso sera exibido dizendo que o Android SDK nao foi encontrado, entao, clique em "configure", "Android SDK..." e selecione a pasta aonde o SDK esta instalado, por padrao, ele sera encontrado aqui: "/home/seu_usuario/Android/Sdk"
+10. Apos isso, e necessario fazer a conexao com o celular (utilizei USB, e necessario ativar o modo desenvolvedor e o USB debugging) e selecionar o seu aparelho como dispositivo de saida
+11. Ao lado esquerdo do vscode, clique em "run and debug" e espere ate que o app seja compilado. Um pop-up ira aparecer em seu celular pedindo permissao para a instalacao do aplicativo, entao, clique em aceitar.
+12. Mais informacoes podem ser encontradas nesse video: https://www.youtube.com/watch?v=4D2vUYUIqFU
+
+
+
+
